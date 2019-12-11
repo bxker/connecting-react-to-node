@@ -13,7 +13,7 @@ export default class Tasks extends Component {
     }
 
     componentDidMount(){
-        axios.get('/api/tasks').then(response => {
+        axios.get('http://localhost:4000/api/tasks').then(response => {
             this.setState({
                 tasks: response.data
             })
@@ -31,6 +31,7 @@ export default class Tasks extends Component {
     addTasks = () => {
         const {task_text, task_description} = this.state
         axios.post('/api/tasks', {task_text, task_description}).then(response => {
+            console.log(response)
             this.setState({
                 tasks: response.data
             })

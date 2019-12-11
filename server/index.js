@@ -5,7 +5,7 @@ const port = 4000
 //controller imports
 const {getTasks, addTasks, updateTasks, deleteTasks} = require('./controllers/taskController')
 
-// lets us use req
+// lets us use req.body
 app.use(express.json())
 
 //endpoints - full crud (get, post, put, delete)
